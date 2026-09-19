@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<![CDATA[<helmet>
+<style>
+  html, body { margin:0; padding:0; background:#FFFCF2; }
+  body { -webkit-font-smoothing:antialiased; }
+  a { color:#161616; text-decoration:none; }
+  a:hover { color:#35599F; }
+  ::selection { background:#35599F; color:#FFFCF2; }
+  @keyframes coela-marq { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+  @keyframes coela-kb { from { transform:scale(1); } to { transform:scale(1.09); } }
+</style>
+</helmet>
+
+<div style="background:#FFFCF2; color:#161616; font-family:'Helvetica Neue',Helvetica,'Liberation Sans',sans-serif; font-weight:700; overflow-x:clip">
+
+  <div style="display:flex; align-items:center; justify-content:space-between; gap:16px; padding:9px clamp(16px,3vw,44px); border-bottom:1px solid rgba(22,22,22,.10); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#935F51">
+    <span data-es="Envíos a todo México · Hecho a mano" data-en="Worldwide shipping · Handmade">Envíos a todo México · Hecho a mano</span>
+    <div style="display:flex; align-items:center; gap:10px; font-size:10px; letter-spacing:.16em">
+      <button data-lang="es" style="background:none; border:0; padding:0; cursor:pointer; font:inherit; font-weight:700; letter-spacing:.16em; color:#161616">ES</button>
+      <span style="width:1px; height:9px; background:rgba(22,22,22,.3)"></span>
+      <button data-lang="en" style="background:none; border:0; padding:0; cursor:pointer; font:inherit; font-weight:700; letter-spacing:.16em; color:rgba(22,22,22,.6)">EN</button>
+    </div>
+  </div>
+
+  <header data-header style="position:sticky; top:0; z-index:40; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:16px; padding:22px clamp(16px,3vw,44px); background:rgba(255,252,242,.86); backdrop-filter:saturate(140%) blur(14px); -webkit-backdrop-filter:saturate(140%) blur(14px); transition:padding .5s cubic-bezier(.16,1,.3,1), box-shadow .5s ease">
+    <nav style="display:flex; align-items:center; gap:clamp(14px,2vw,30px); font-size:11px; letter-spacing:.17em; text-transform:uppercase">
+      <a data-navlink href="Coela%20Compra.dc.html" style="position:relative; display:inline-block; padding-bottom:3px" data-es="Compra" data-en="Shop">Compra</a>
+      <a data-navlink href="Coela%20Nosotras.dc.html" style="position:relative; display:inline-block; padding-bottom:3px" data-es="Nosotras" data-en="About">Nosotras</a>
+      <a data-navlink href="Coela%20Colecciones.dc.html" style="position:relative; display:inline-block; padding-bottom:3px" data-es="Colecciones" data-en="Collections">Colecciones</a>
+    </nav>
+    <a href="#top" data-logo style="display:block; opacity:0; transform:translateY(10px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1)">
+      <img src="assets/coela-negro.png" alt="coela" style="display:block; width:clamp(84px,7.5vw,118px); height:auto" />
+    </a>
+    <div style="display:flex; align-items:center; justify-content:flex-end; gap:clamp(14px,1.6vw,22px)">
+      <svg data-icon width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.6" style="cursor:pointer; transition:transform .45s cubic-bezier(.16,1,.3,1), stroke .3s ease"><circle cx="12" cy="8" r="4"></circle><path d="M4.5 21c1.4-4 4.1-5.6 7.5-5.6S18.1 17 19.5 21"></path></svg>
+      <svg data-icon width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.6" style="cursor:pointer; transition:transform .45s cubic-bezier(.16,1,.3,1), stroke .3s ease"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="M15.4 15.4 21 21"></path></svg>
+      <a href="Coela%20Checkout.dc.html" style="display:flex; align-items:center; gap:7px; cursor:pointer">
+        <svg data-icon width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#161616" stroke-width="1.6" style="transition:transform .45s cubic-bezier(.16,1,.3,1), stroke .3s ease"><path d="M4 7h16l-1.4 14H5.4L4 7Z"></path><path d="M9 7V5.5a3 3 0 0 1 6 0V7"></path></svg>
+        <span style="font-size:10px; letter-spacing:.12em; color:rgba(22,22,22,.62)">(0)</span>
+      </a>
+    </div>
+  </header>
+
+  <section id="top" style="position:relative; height:clamp(460px,88vh,940px); overflow:hidden; background:#C6C5B9">
+    <div data-hero-media style="position:absolute; inset:0; will-change:transform">
+      <div data-slide="0" style="position:absolute; inset:0; opacity:1; transition:opacity 1.6s cubic-bezier(.4,0,.2,1)">
+        <img src="assets/rocas.png" alt="" style="width:100%; height:100%; object-fit:cover; animation:coela-kb 14s ease-out infinite alternate" />
+      </div>
+      <div data-slide="1" style="position:absolute; inset:0; opacity:0; transition:opacity 1.6s cubic-bezier(.4,0,.2,1)">
+        <img src="assets/flor.png" alt="" style="width:100%; height:100%; object-fit:cover; animation:coela-kb 14s ease-out infinite alternate" />
+      </div>
+      <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(22,22,22,.62) 0%, rgba(22,22,22,.42) 26%, rgba(22,22,22,.08) 62%, rgba(22,22,22,.14) 100%)"></div>
+    </div>
+    <div data-curtain style="position:absolute; inset:0; background:#FFFCF2; z-index:5; transform:translateY(0); transition:transform 1.5s cubic-bezier(.76,0,.24,1)"></div>
+
+    <div data-hero-copy style="position:absolute; left:0; right:0; bottom:0; z-index:6; display:flex; align-items:flex-end; justify-content:space-between; gap:24px; padding:clamp(20px,4vw,56px) clamp(16px,3vw,44px)">
+      <div style="max-width:min(760px,80%)">
+        <div data-word style="overflow:hidden; margin-bottom:6px"><span style="display:inline-block; transform:translateY(120%); transition:transform 1.1s cubic-bezier(.16,1,.3,1); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:#FFFCF2" data-es="Verano 2026 · Doble vista" data-en="Summer 2026 · Reversible">Verano 2026 · Doble vista</span></div>
+        <h1 style="margin:0; color:#FFFCF2; font-size:clamp(30px,6.4vw,86px); line-height:.95; letter-spacing:-.035em; font-weight:700; text-wrap:balance">
+          <span data-word style="display:block; overflow:hidden"><span style="display:inline-block; transform:translateY(120%); transition:transform 1.2s cubic-bezier(.16,1,.3,1)">swimwear y otros</span></span>
+          <span data-word style="display:block; overflow:hidden"><span style="display:inline-block; transform:translateY(120%); transition:transform 1.2s cubic-bezier(.16,1,.3,1)">experimentos</span></span>
+        </h1>
+        <div data-word style="overflow:hidden; margin-top:clamp(16px,2.4vw,28px)">
+          <a data-cta href="Coela%20Compra.dc.html" style="display:inline-flex; align-items:center; gap:12px; transform:translateY(120%); transition:transform 1.1s cubic-bezier(.16,1,.3,1); background:#FFFCF2; color:#161616; padding:14px 26px; font-size:11px; letter-spacing:.2em; text-transform:uppercase; overflow:hidden; position:relative">
+            <span style="position:relative; z-index:2" data-es="Compra ahora" data-en="Shop now">Compra ahora</span>
+            <span data-arrow style="position:relative; z-index:2; display:inline-block; transition:transform .55s cubic-bezier(.16,1,.3,1)">→</span>
+            <span data-fill style="position:absolute; inset:0; background:#35599F; transform:translateY(101%); transition:transform .6s cubic-bezier(.16,1,.3,1); z-index:1"></span>
+          </a>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:10px; color:#FFFCF2; font-size:11px; letter-spacing:.2em; padding-bottom:6px">
+        <span data-counter>01</span>
+        <span style="width:clamp(26px,4vw,56px); height:1px; background:rgba(255,252,242,.45); position:relative; overflow:hidden"><span data-progress style="position:absolute; inset:0; background:#FFFCF2; transform-origin:left; transform:scaleX(0)"></span></span>
+        <span style="color:rgba(255,252,242,.6)">02</span>
+      </div>
+    </div>
+  </section>
+
+  <div data-marquee style="background:#35599F; color:#FFFCF2; overflow:hidden; padding:11px 0; white-space:nowrap">
+    <div style="display:inline-flex; gap:0; animation:coela-marq 34s linear infinite; will-change:transform">
+      <span style="display:inline-flex; gap:38px; padding-right:38px; font-size:11px; letter-spacing:.24em; text-transform:uppercase"><span>Doble vista</span><span>·</span><span>Hecho a mano en México</span><span>·</span><span>Telas conscientes</span><span>·</span><span>Para todos los cuerpos</span><span>·</span><span>Doble vista</span><span>·</span><span>Hecho a mano en México</span><span>·</span><span>Telas conscientes</span><span>·</span><span>Para todos los cuerpos</span><span>·</span></span>
+      <span style="display:inline-flex; gap:38px; padding-right:38px; font-size:11px; letter-spacing:.24em; text-transform:uppercase"><span>Doble vista</span><span>·</span><span>Hecho a mano en México</span><span>·</span><span>Telas conscientes</span><span>·</span><span>Para todos los cuerpos</span><span>·</span><span>Doble vista</span><span>·</span><span>Hecho a mano en México</span><span>·</span><span>Telas conscientes</span><span>·</span><span>Para todos los cuerpos</span><span>·</span></span>
+    </div>
+  </div>
+
+  <section id="compra" style="padding:clamp(40px,7vw,104px) clamp(16px,3vw,44px) clamp(28px,4vw,56px)">
+    <div style="display:flex; align-items:flex-end; justify-content:space-between; gap:20px; margin-bottom:clamp(18px,2.6vw,34px)">
+      <h2 data-reveal style="margin:0; opacity:0; transform:translateY(24px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); font-size:11px; letter-spacing:.24em; text-transform:uppercase; color:#935F51" data-es="Compra por categoría" data-en="Shop by category">Compra por categoría</h2>
+      <a data-reveal data-delay="90" href="Coela%20Compra.dc.html" style="opacity:0; transform:translateY(24px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); font-size:11px; letter-spacing:.18em; text-transform:uppercase; border-bottom:1px solid rgba(22,22,22,.3); padding-bottom:2px" data-es="Ver todo" data-en="View all">Ver todo</a>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(170px,1fr)); gap:clamp(8px,1vw,16px)">
+      <a data-tile href="Coela%20Compra.dc.html" style="display:block">
+        <div data-reveal="mask" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4.2; background:#C6C5B9">
+          <img data-zoom src="assets/sets.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.14); transition:transform 1.5s cubic-bezier(.16,1,.3,1)" />
+          <img data-reverse src="assets/flor-vertical.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .85s cubic-bezier(.4,0,.2,1)" />
+          <span data-flip style="position:absolute; left:10px; top:10px; background:rgba(255,252,242,.92); color:#161616; font-size:9px; letter-spacing:.16em; text-transform:uppercase; padding:5px 8px; opacity:0; transform:translateY(-6px); transition:opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)">Vista B</span>
+        </div>
+        <div data-reveal data-delay="120" style="opacity:0; transform:translateY(18px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:12px 2px 0">
+          <span style="font-size:clamp(13px,1.3vw,17px); letter-spacing:-.01em; text-transform:uppercase">Sets</span>
+          <span style="font-size:10px; letter-spacing:.14em; color:rgba(22,22,22,.62)">01</span>
+        </div>
+        <span data-rule style="display:block; height:1px; background:#161616; width:0%; transition:width .7s cubic-bezier(.16,1,.3,1); margin-top:8px"></span>
+      </a>
+      <a data-tile href="Coela%20Compra.dc.html" style="display:block">
+        <div data-reveal="mask" data-delay="80" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4.2; background:#C6C5B9">
+          <img data-zoom src="assets/tops.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.14); transition:transform 1.5s cubic-bezier(.16,1,.3,1)" />
+          <img data-reverse src="assets/tela.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .85s cubic-bezier(.4,0,.2,1)" />
+          <span data-flip style="position:absolute; left:10px; top:10px; background:rgba(255,252,242,.92); color:#161616; font-size:9px; letter-spacing:.16em; text-transform:uppercase; padding:5px 8px; opacity:0; transform:translateY(-6px); transition:opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)">Vista B</span>
+        </div>
+        <div data-reveal data-delay="200" style="opacity:0; transform:translateY(18px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:12px 2px 0">
+          <span style="font-size:clamp(13px,1.3vw,17px); letter-spacing:-.01em; text-transform:uppercase">Tops</span>
+          <span style="font-size:10px; letter-spacing:.14em; color:rgba(22,22,22,.62)">02</span>
+        </div>
+        <span data-rule style="display:block; height:1px; background:#161616; width:0%; transition:width .7s cubic-bezier(.16,1,.3,1); margin-top:8px"></span>
+      </a>
+      <a data-tile href="Coela%20Compra.dc.html" style="display:block">
+        <div data-reveal="mask" data-delay="160" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4.2; background:#C6C5B9">
+          <img data-zoom src="assets/bottoms.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.14); transition:transform 1.5s cubic-bezier(.16,1,.3,1)" />
+          <img data-reverse src="assets/rocas.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .85s cubic-bezier(.4,0,.2,1)" />
+          <span data-flip style="position:absolute; left:10px; top:10px; background:rgba(255,252,242,.92); color:#161616; font-size:9px; letter-spacing:.16em; text-transform:uppercase; padding:5px 8px; opacity:0; transform:translateY(-6px); transition:opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)">Vista B</span>
+        </div>
+        <div data-reveal data-delay="280" style="opacity:0; transform:translateY(18px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:12px 2px 0">
+          <span style="font-size:clamp(13px,1.3vw,17px); letter-spacing:-.01em; text-transform:uppercase">Bottoms</span>
+          <span style="font-size:10px; letter-spacing:.14em; color:rgba(22,22,22,.62)">03</span>
+        </div>
+        <span data-rule style="display:block; height:1px; background:#161616; width:0%; transition:width .7s cubic-bezier(.16,1,.3,1); margin-top:8px"></span>
+      </a>
+      <a data-tile href="Coela%20Compra.dc.html" style="display:block">
+        <div data-reveal="mask" data-delay="240" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4.2; background:#C6C5B9">
+          <img data-zoom src="assets/accesorios.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.14); transition:transform 1.5s cubic-bezier(.16,1,.3,1)" />
+          <img data-reverse src="assets/flor.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .85s cubic-bezier(.4,0,.2,1)" />
+          <span data-flip style="position:absolute; left:10px; top:10px; background:rgba(255,252,242,.92); color:#161616; font-size:9px; letter-spacing:.16em; text-transform:uppercase; padding:5px 8px; opacity:0; transform:translateY(-6px); transition:opacity .5s ease, transform .5s cubic-bezier(.16,1,.3,1)">Vista B</span>
+        </div>
+        <div data-reveal data-delay="360" style="opacity:0; transform:translateY(18px); transition:opacity .9s cubic-bezier(.16,1,.3,1), transform .9s cubic-bezier(.16,1,.3,1); display:flex; align-items:baseline; justify-content:space-between; gap:10px; padding:12px 2px 0">
+          <span style="font-size:clamp(13px,1.3vw,17px); letter-spacing:-.01em; text-transform:uppercase">Accesorios</span>
+          <span style="font-size:10px; letter-spacing:.14em; color:rgba(22,22,22,.62)">04</span>
+        </div>
+        <span data-rule style="display:block; height:1px; background:#161616; width:0%; transition:width .7s cubic-bezier(.16,1,.3,1); margin-top:8px"></span>
+      </a>
+    </div>
+  </section>
+
+  <section id="colecciones" style="padding:clamp(30px,5vw,80px) clamp(16px,3vw,44px) clamp(40px,6vw,96px)">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:clamp(14px,2vw,32px); align-items:stretch">
+      <a data-news href="Coela%20Colecciones.dc.html" style="display:block">
+        <div data-reveal="mask" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.4s cubic-bezier(.76,0,.24,1); aspect-ratio:16/10; background:#C6C5B9">
+          <img data-zoom src="assets/tela.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.12); transition:transform 1.6s cubic-bezier(.16,1,.3,1)" />
+          <div style="position:absolute; inset:0; background:linear-gradient(to top, rgba(22,22,22,.62), rgba(22,22,22,0) 55%)"></div>
+          <div style="position:absolute; left:clamp(14px,2vw,28px); right:clamp(14px,2vw,28px); bottom:clamp(14px,2vw,26px); color:#FFFCF2">
+            <div style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; opacity:.85; margin-bottom:8px" data-es="Noticias" data-en="News">Noticias</div>
+            <div style="font-size:clamp(18px,2.4vw,32px); line-height:1.02; letter-spacing:-.025em; max-width:20ch" data-es="Nueva colección: una prenda, dos maneras de usarla" data-en="New collection: one piece, two ways to wear it">Nueva colección: una prenda, dos maneras de usarla</div>
+            <span data-newsrule style="display:block; height:1px; background:#FFFCF2; width:38px; margin-top:14px; transition:width .8s cubic-bezier(.16,1,.3,1)"></span>
+          </div>
+        </div>
+      </a>
+
+      <div data-reveal data-delay="140" style="opacity:0; transform:translateY(26px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); display:flex; flex-direction:column; justify-content:space-between; gap:clamp(20px,3vw,34px); border:1px solid rgba(22,22,22,.16); padding:clamp(20px,3vw,38px)">
+        <div>
+          <div style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#935F51; margin-bottom:clamp(14px,2vw,22px)" data-es="Newsletter" data-en="Newsletter">Newsletter</div>
+          <div style="font-size:clamp(20px,2.6vw,36px); line-height:1.0; letter-spacing:-.03em; max-width:22ch" data-es="Únete y recibe primero los lanzamientos" data-en="Join us and get the drops first">Únete y recibe primero los lanzamientos</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="display:flex; align-items:center; gap:12px; border-bottom:1px solid rgba(22,22,22,.25); padding-bottom:10px">
+            <input data-input type="email" placeholder="tu@correo.com" style="flex:1; min-width:0; background:transparent; border:0; outline:none; font-family:inherit; font-weight:700; font-size:13px; letter-spacing:.02em; color:#161616; padding:0" />
+            <button data-subscribe style="background:none; border:0; padding:0; cursor:pointer; font:inherit; font-weight:700; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#161616; display:flex; align-items:center; gap:8px">
+              <span data-es="Suscribir" data-en="Subscribe">Suscribir</span>
+              <span data-subarrow style="display:inline-block; transition:transform .5s cubic-bezier(.16,1,.3,1)">→</span>
+            </button>
+          </div>
+          <div style="font-size:10px; letter-spacing:.1em; color:rgba(22,22,22,.62); line-height:1.5" data-es="Sin spam. Solo colecciones, colaboraciones y guía de tallas." data-en="No spam. Only collections, collaborations and sizing.">Sin spam. Solo colecciones, colaboraciones y guía de tallas.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="nosotras" style="border-top:1px solid rgba(22,22,22,.14); padding:clamp(26px,4vw,52px) clamp(16px,3vw,44px) clamp(20px,3vw,34px)">
+    <div data-reveal style="opacity:0; transform:translateY(20px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1); display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:clamp(14px,3vw,40px); font-size:11px; letter-spacing:.17em; text-transform:uppercase">
+      <nav style="display:flex; flex-wrap:wrap; gap:clamp(14px,2vw,30px)">
+        <a data-navlink href="Coela%20Nosotras.dc.html" style="position:relative; padding-bottom:3px" data-es="Nosotras" data-en="About">Nosotras</a>
+        <a data-navlink href="Coela%20Nosotras.dc.html" style="position:relative; padding-bottom:3px" data-es="Contáctanos" data-en="Contact">Contáctanos</a>
+        <a data-navlink href="Coela%20Compra.dc.html" style="position:relative; padding-bottom:3px" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</a>
+        <a data-navlink href="Coela%20Compra.dc.html" style="position:relative; padding-bottom:3px" data-es="Términos y condiciones" data-en="Terms & conditions">Términos y condiciones</a>
+      </nav>
+      <nav style="display:flex; gap:clamp(14px,2vw,26px)">
+        <a data-navlink href="#nosotras" style="position:relative; padding-bottom:3px">Instagram</a>
+        <a data-navlink href="#nosotras" style="position:relative; padding-bottom:3px">TikTok</a>
+      </nav>
+    </div>
+    <div data-reveal="mask" data-delay="120" style="overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); margin-top:clamp(24px,4vw,54px)">
+      <img src="assets/coela-negro.png" alt="coela" style="display:block; width:min(100%,460px); height:auto; opacity:.12" />
+    </div>
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; margin-top:clamp(14px,2vw,26px); font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:rgba(22,22,22,.62)">
+      <span>© 2026 Coela · Ciudad de México</span>
+      <span data-es="Trajes de baño doble vista" data-en="Reversible swimwear">Trajes de baño doble vista</span>
+    </div>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#35599F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#35599F&quot;,&quot;#935F51&quot;,&quot;#161616&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;showMarquee&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Marca&quot;},&quot;animationPace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;natural&quot;,&quot;pausada&quot;],&quot;default&quot;:&quot;natural&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Animación&quot;}}">
+class Component extends DCLogic {
+  componentDidMount() {
+    const p = this.props || {};
+    this.accent = p.accentColor || '#35599F';
+    this.slow = (p.animationPace || 'natural') === 'pausada' ? 1.45 : 1;
+    if (p.showMarquee === false) {
+      const m = document.querySelector('[data-marquee]');
+      if (m) m.style.display = 'none';
+    }
+    if (this.accent !== '#35599F') {
+      const m = document.querySelector('[data-marquee]');
+      if (m) m.style.background = this.accent;
+      const f = document.querySelector('[data-fill]');
+      if (f) f.style.background = this.accent;
+    }
+    if (this.slow !== 1) {
+      document.querySelectorAll('[style*="transition"]').forEach(el => {
+        el.style.transitionDuration = '';
+        el.style.transitionDelay = '';
+      });
+      document.documentElement.style.setProperty('--pace', this.slow);
+    }
+    this.intro();
+    this.observeReveals();
+    this.wireHero();
+    this.wireTiles();
+    this.wireNav();
+    this.wireLang();
+  }
+
+  intro() {
+    const s = this.slow;
+    setTimeout(() => {
+      const c = document.querySelector('[data-curtain]');
+      if (c) c.style.transform = 'translateY(-101%)';
+    }, 180 * s);
+    setTimeout(() => {
+      const l = document.querySelector('[data-logo]');
+      if (l) { l.style.opacity = '1'; l.style.transform = 'translateY(0)'; }
+    }, 420 * s);
+    document.querySelectorAll('[data-word] > span').forEach((w, i) => {
+      setTimeout(() => { w.style.transform = 'translateY(0)'; }, (700 + i * 110) * s);
+    });
+  }
+
+  reveal(el) {
+    const d = (+(el.dataset.delay || 0)) * this.slow;
+    setTimeout(() => {
+      if (el.dataset.reveal === 'mask') {
+        el.style.clipPath = 'inset(0 0 0% 0)';
+        const z = el.querySelector('[data-zoom]');
+        if (z) z.style.transform = 'scale(1)';
+      } else {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+      }
+    }, d);
+  }
+
+  observeReveals() {
+    const nodes = Array.from(document.querySelectorAll('[data-reveal]'));
+    if (!('IntersectionObserver' in window)) { nodes.forEach(n => this.reveal(n)); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { this.reveal(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    nodes.forEach(n => io.observe(n));
+    setTimeout(() => nodes.forEach(n => this.reveal(n)), 3500);
+  }
+
+  wireHero() {
+    const slides = document.querySelectorAll('[data-slide]');
+    const counter = document.querySelector('[data-counter]');
+    const prog = document.querySelector('[data-progress]');
+    const dur = 6000;
+    let i = 0;
+    const tick = () => {
+      i = (i + 1) % slides.length;
+      slides.forEach((s, n) => { s.style.opacity = n === i ? '1' : '0'; });
+      if (counter) counter.textContent = '0' + (i + 1);
+      if (prog) {
+        prog.style.transition = 'none';
+        prog.style.transform = 'scaleX(0)';
+        requestAnimationFrame(() => {
+          prog.style.transition = 'transform ' + dur + 'ms linear';
+          prog.style.transform = 'scaleX(1)';
+        });
+      }
+    };
+    if (prog) {
+      prog.style.transition = 'transform ' + dur + 'ms linear';
+      requestAnimationFrame(() => { prog.style.transform = 'scaleX(1)'; });
+    }
+    this.timer = setInterval(tick, dur);
+
+    const media = document.querySelector('[data-hero-media]');
+    const copy = document.querySelector('[data-hero-copy]');
+    const header = document.querySelector('[data-header]');
+    let raf = null;
+    this.onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        const y = window.scrollY || 0;
+        if (media) media.style.transform = 'translate3d(0,' + (y * 0.16).toFixed(1) + 'px,0)';
+        if (copy) copy.style.opacity = String(Math.max(0, 1 - y / 420));
+        if (header) {
+          const on = y > 40;
+          header.style.padding = on ? '13px clamp(16px,3vw,44px)' : '22px clamp(16px,3vw,44px)';
+          header.style.boxShadow = on ? '0 1px 0 rgba(22,22,22,.12)' : 'none';
+        }
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+  }
+
+  wireTiles() {
+    document.querySelectorAll('[data-tile]').forEach(t => {
+      const rev = t.querySelector('[data-reverse]');
+      const zoom = t.querySelector('[data-zoom]');
+      const flip = t.querySelector('[data-flip]');
+      const rule = t.querySelector('[data-rule]');
+      t.addEventListener('mouseenter', () => {
+        if (rev) rev.style.opacity = '1';
+        if (zoom) zoom.style.transform = 'scale(1.05)';
+        if (flip) { flip.style.opacity = '1'; flip.style.transform = 'translateY(0)'; }
+        if (rule) rule.style.width = '100%';
+      });
+      t.addEventListener('mouseleave', () => {
+        if (rev) rev.style.opacity = '0';
+        if (zoom) zoom.style.transform = 'scale(1)';
+        if (flip) { flip.style.opacity = '0'; flip.style.transform = 'translateY(-6px)'; }
+        if (rule) rule.style.width = '0%';
+      });
+    });
+
+    const news = document.querySelector('[data-news]');
+    if (news) {
+      const z = news.querySelector('[data-zoom]');
+      const r = news.querySelector('[data-newsrule]');
+      news.addEventListener('mouseenter', () => {
+        if (z) z.style.transform = 'scale(1.05)';
+        if (r) r.style.width = '110px';
+      });
+      news.addEventListener('mouseleave', () => {
+        if (z) z.style.transform = 'scale(1)';
+        if (r) r.style.width = '38px';
+      });
+    }
+
+    const cta = document.querySelector('[data-cta]');
+    if (cta) {
+      const fill = cta.querySelector('[data-fill]');
+      const arrow = cta.querySelector('[data-arrow]');
+      const label = cta.querySelector('span');
+      cta.addEventListener('mouseenter', () => {
+        if (fill) fill.style.transform = 'translateY(0)';
+        if (arrow) arrow.style.transform = 'translateX(6px)';
+        cta.style.color = '#FFFCF2';
+        if (label) label.style.color = '#FFFCF2';
+      });
+      cta.addEventListener('mouseleave', () => {
+        if (fill) fill.style.transform = 'translateY(101%)';
+        if (arrow) arrow.style.transform = 'translateX(0)';
+        cta.style.color = '#161616';
+        if (label) label.style.color = '#161616';
+      });
+    }
+
+    const sub = document.querySelector('[data-subscribe]');
+    if (sub) {
+      const a = sub.querySelector('[data-subarrow]');
+      sub.addEventListener('mouseenter', () => { if (a) a.style.transform = 'translateX(6px)'; });
+      sub.addEventListener('mouseleave', () => { if (a) a.style.transform = 'translateX(0)'; });
+    }
+
+    const input = document.querySelector('[data-input]');
+    if (input) {
+      const line = input.parentElement;
+      input.addEventListener('focus', () => { line.style.borderBottomColor = this.accent; });
+      input.addEventListener('blur', () => { line.style.borderBottomColor = 'rgba(22,22,22,.25)'; });
+    }
+
+    document.querySelectorAll('[data-icon]').forEach(ic => {
+      ic.addEventListener('mouseenter', () => { ic.style.transform = 'translateY(-2px)'; ic.style.stroke = this.accent; });
+      ic.addEventListener('mouseleave', () => { ic.style.transform = 'translateY(0)'; ic.style.stroke = '#161616'; });
+    });
+  }
+
+  wireNav() {
+    document.querySelectorAll('[data-navlink]').forEach(a => {
+      const u = document.createElement('span');
+      u.style.cssText = 'position:absolute;left:0;bottom:0;height:1px;width:100%;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .55s cubic-bezier(.16,1,.3,1)';
+      a.appendChild(u);
+      a.addEventListener('mouseenter', () => { u.style.transform = 'scaleX(1)'; });
+      a.addEventListener('mouseleave', () => { u.style.transformOrigin = 'right'; u.style.transform = 'scaleX(0)'; setTimeout(() => { u.style.transformOrigin = 'left'; }, 560); });
+    });
+  }
+
+  wireLang() {
+    const btns = document.querySelectorAll('[data-lang]');
+    const set = lang => {
+      document.querySelectorAll('[data-es]').forEach(el => {
+        const v = lang === 'en' ? el.dataset.en : el.dataset.es;
+        if (v) el.textContent = v;
+      });
+      btns.forEach(b => { b.style.color = b.dataset.lang === lang ? '#161616' : 'rgba(22,22,22,.6)'; });
+    };
+    btns.forEach(b => b.addEventListener('click', e => { e.preventDefault(); set(b.dataset.lang); }));
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer);
+    window.removeEventListener('scroll', this.onScroll);
+  }
+}
+</script>
+</body>
+</html>
