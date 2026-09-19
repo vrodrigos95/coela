@@ -182,6 +182,29 @@
       <span data-es="Trajes de baño doble vista" data-en="Reversible swimwear">Trajes de baño doble vista</span>
     </div>
   </footer>
+
+  <div data-promo-modal style="position:fixed; inset:0; z-index:110; display:none; align-items:center; justify-content:center; padding:20px">
+    <div data-promo-backdrop style="position:absolute; inset:0; background:rgba(22,22,22,.55)"></div>
+    <div style="position:relative; background:#FFFCF2; max-width:420px; width:100%; overflow:hidden">
+      <button data-promo-close aria-label="Cerrar" style="position:absolute; top:14px; right:14px; z-index:2; cursor:pointer; background:rgba(255,252,242,.9); border:0; width:30px; height:30px; border-radius:50%; font-size:16px; line-height:1; color:#161616">×</button>
+      <div style="position:relative; aspect-ratio:16/9; background:#C6C5B9">
+        <img src="assets/flor.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block" />
+      </div>
+      <div style="padding:clamp(24px,4vw,36px)">
+        <div style="font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:#935F51; margin-bottom:10px" data-es="Bienvenida" data-en="Welcome">Bienvenida</div>
+        <h2 style="margin:0 0 10px; font-size:clamp(24px,3.4vw,34px); letter-spacing:-.03em; line-height:1.05" data-es="10% de descuento en tu primera compra" data-en="10% off your first order">10% de descuento en tu primera compra</h2>
+        <p style="margin:0 0 20px; font-size:12px; line-height:1.5; color:rgba(22,22,22,.66)" data-es="Déjanos tu correo y te mandamos el código." data-en="Leave us your email and we will send you the code.">Déjanos tu correo y te mandamos el código.</p>
+        <div style="display:flex; align-items:center; gap:10px; border-bottom:1px solid rgba(22,22,22,.25); padding-bottom:10px">
+          <input data-promo-input type="email" placeholder="tu@correo.com" style="flex:1; min-width:0; background:transparent; border:0; outline:none; font-family:inherit; font-weight:700; font-size:13px; color:#161616; padding:0" />
+          <button data-promo-submit style="background:none; border:0; padding:0; cursor:pointer; font:inherit; font-weight:700; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#161616; display:flex; align-items:center; gap:8px">
+            <span data-promo-label data-es="Obtener" data-en="Get code">Obtener</span>
+            <span style="display:inline-block">→</span>
+          </button>
+        </div>
+        <div data-promo-hint style="margin-top:12px; font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:rgba(22,22,22,.5)" data-es="Aplica en tu primera compra · Sin spam" data-en="Applies to your first order · No spam">Aplica en tu primera compra · Sin spam</div>
+      </div>
+    </div>
+  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#35599F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#35599F&quot;,&quot;#935F51&quot;,&quot;#161616&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;animationPace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;natural&quot;,&quot;pausada&quot;],&quot;default&quot;:&quot;natural&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Animación&quot;}}">
@@ -196,6 +219,37 @@ class Component extends DCLogic {
         const q = document.querySelector('[data-quote-band]');
         if (q) q.style.background = accent;
       }
+    });
+    this.wirePromoModal();
+  }
+
+  wirePromoModal() {
+    const modal = document.querySelector('[data-promo-modal]');
+    if (!modal) return;
+    const backdrop = document.querySelector('[data-promo-backdrop]');
+    const close = document.querySelector('[data-promo-close]');
+    const submit = document.querySelector('[data-promo-submit]');
+    const input = document.querySelector('[data-promo-input]');
+    const label = document.querySelector('[data-promo-label]');
+    const hint = document.querySelector('[data-promo-hint]');
+    const hide = () => {
+      modal.style.display = 'none';
+      try { sessionStorage.setItem('coela_promo_seen', '1'); } catch (e) {}
+    };
+    let seen = false;
+    try { seen = sessionStorage.getItem('coela_promo_seen') === '1'; } catch (e) {}
+    if (!seen) setTimeout(() => { modal.style.display = 'flex'; }, 1400);
+    if (close) close.addEventListener('click', hide);
+    if (backdrop) backdrop.addEventListener('click', hide);
+    if (submit) submit.addEventListener('click', () => {
+      const v = input && input.value.trim();
+      if (!v || v.indexOf('@') === -1) {
+        if (hint) { hint.textContent = 'Ingresa un correo válido'; hint.style.color = '#935F51'; }
+        return;
+      }
+      if (label) label.textContent = 'COELA10 enviado ✓';
+      if (hint) { hint.textContent = 'Revisa tu correo'; hint.style.color = 'rgba(22,22,22,.5)'; }
+      setTimeout(hide, 1600);
     });
   }
 }
