@@ -56,20 +56,34 @@
 
     <div style="display:flex; flex-direction:column; gap:clamp(8px,1.2vw,16px)">
       <div data-reveal="mask" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.3s cubic-bezier(.76,0,.24,1); aspect-ratio:4/5; background:#C6C5B9">
-        <img data-vista-a data-zoom src="assets/sets.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.1); transition:transform 1.5s cubic-bezier(.16,1,.3,1), opacity .9s cubic-bezier(.4,0,.2,1)" />
-        <img data-vista-b src="assets/flor-vertical.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .9s cubic-bezier(.4,0,.2,1)" />
-        <span data-vista-label style="position:absolute; left:14px; top:14px; background:rgba(255,252,242,.94); font-size:9px; letter-spacing:.18em; text-transform:uppercase; padding:7px 10px">Vista A</span>
-      </div>
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:clamp(8px,1.2vw,16px)">
-        <div data-reveal="mask" data-delay="90" style="overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.2s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4; background:#C6C5B9">
-          <img data-zoom src="assets/tops.png" alt="" style="width:100%; height:100%; object-fit:cover; transform:scale(1.1); transition:transform 1.4s cubic-bezier(.16,1,.3,1)" />
+        <div data-slide="0" style="position:absolute; inset:0; opacity:1; transition:opacity .6s cubic-bezier(.4,0,.2,1)">
+          <img data-vista-a data-zoom src="assets/sets.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; transform:scale(1.1); transition:transform 1.5s cubic-bezier(.16,1,.3,1), opacity .9s cubic-bezier(.4,0,.2,1)" />
+          <img data-vista-b src="assets/flor-vertical.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:0; transition:opacity .9s cubic-bezier(.4,0,.2,1)" />
         </div>
-        <div data-reveal="mask" data-delay="160" style="overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.2s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4; background:#C6C5B9">
-          <img data-zoom src="assets/tela.png" alt="" style="width:100%; height:100%; object-fit:cover; transform:scale(1.1); transition:transform 1.4s cubic-bezier(.16,1,.3,1)" />
+        <div data-slide="1" style="position:absolute; inset:0; opacity:0; transition:opacity .6s cubic-bezier(.4,0,.2,1)">
+          <img src="assets/tops.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover" />
+        </div>
+        <div data-slide="2" style="position:absolute; inset:0; opacity:0; transition:opacity .6s cubic-bezier(.4,0,.2,1)">
+          <img src="assets/tela.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover" />
+        </div>
+        <div data-slide="3" style="position:absolute; inset:0; opacity:0; transition:opacity .6s cubic-bezier(.4,0,.2,1)">
+          <img src="assets/rocas.png" alt="" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover" />
+        </div>
+        <span data-vista-label style="position:absolute; left:14px; top:14px; background:rgba(255,252,242,.94); font-size:9px; letter-spacing:.18em; text-transform:uppercase; padding:7px 10px; z-index:3">Vista A</span>
+        <button data-carousel-prev aria-label="Anterior" style="position:absolute; left:12px; top:50%; transform:translateY(-50%); width:36px; height:36px; border-radius:50%; border:0; background:rgba(255,252,242,.88); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; z-index:3; transition:background .3s ease">←</button>
+        <button data-carousel-next aria-label="Siguiente" style="position:absolute; right:12px; top:50%; transform:translateY(-50%); width:36px; height:36px; border-radius:50%; border:0; background:rgba(255,252,242,.88); cursor:pointer; display:flex; align-items:center; justify-content:center; font-size:15px; z-index:3; transition:background .3s ease">→</button>
+        <div style="position:absolute; left:0; right:0; bottom:14px; display:flex; justify-content:center; gap:6px; z-index:3">
+          <span data-dot="0" style="width:6px; height:6px; border-radius:50%; background:#161616; transition:background .3s ease"></span>
+          <span data-dot="1" style="width:6px; height:6px; border-radius:50%; background:rgba(22,22,22,.3); transition:background .3s ease"></span>
+          <span data-dot="2" style="width:6px; height:6px; border-radius:50%; background:rgba(22,22,22,.3); transition:background .3s ease"></span>
+          <span data-dot="3" style="width:6px; height:6px; border-radius:50%; background:rgba(22,22,22,.3); transition:background .3s ease"></span>
         </div>
       </div>
-      <div data-reveal="mask" data-delay="220" style="overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.2s cubic-bezier(.76,0,.24,1); aspect-ratio:16/10; background:#C6C5B9">
-        <img data-zoom src="assets/rocas.png" alt="" style="width:100%; height:100%; object-fit:cover; transform:scale(1.1); transition:transform 1.4s cubic-bezier(.16,1,.3,1)" />
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(8px,1.2vw,12px)">
+        <button data-thumb="0" style="cursor:pointer; padding:0; border:2px solid #161616; overflow:hidden; aspect-ratio:3/4; background:#C6C5B9; transition:border-color .3s ease"><img src="assets/sets.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block" /></button>
+        <button data-thumb="1" style="cursor:pointer; padding:0; border:2px solid transparent; overflow:hidden; aspect-ratio:3/4; background:#C6C5B9; transition:border-color .3s ease"><img src="assets/tops.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block" /></button>
+        <button data-thumb="2" style="cursor:pointer; padding:0; border:2px solid transparent; overflow:hidden; aspect-ratio:3/4; background:#C6C5B9; transition:border-color .3s ease"><img src="assets/tela.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block" /></button>
+        <button data-thumb="3" style="cursor:pointer; padding:0; border:2px solid transparent; overflow:hidden; aspect-ratio:3/4; background:#C6C5B9; transition:border-color .3s ease"><img src="assets/rocas.png" alt="" style="width:100%; height:100%; object-fit:cover; display:block" /></button>
       </div>
     </div>
 
@@ -99,7 +113,7 @@
       <div data-reveal data-delay="140" style="opacity:0; transform:translateY(18px); transition:opacity 1s cubic-bezier(.16,1,.3,1), transform 1s cubic-bezier(.16,1,.3,1)">
         <div style="display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:10px">
           <span style="font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:rgba(22,22,22,.62)" data-es="Talla" data-en="Size">Talla</span>
-          <a data-navlink href="Coela%20Compra.dc.html" style="position:relative; padding-bottom:2px; font-size:10px; letter-spacing:.16em; text-transform:uppercase" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</a>
+          <button data-sizeguide-open style="cursor:pointer; background:none; border:0; padding:0; font:inherit; font-weight:700; position:relative; padding-bottom:2px; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#161616" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</button>
         </div>
         <div style="display:flex; flex-wrap:wrap; gap:8px">
           <button data-size="XS" style="cursor:pointer; font:inherit; font-weight:700; font-size:11px; letter-spacing:.1em; min-width:48px; padding:12px 0; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .35s ease, color .35s ease, border-color .35s ease">XS</button>
@@ -232,6 +246,65 @@
       <span data-es="Trajes de baño doble vista" data-en="Reversible swimwear">Trajes de baño doble vista</span>
     </div>
   </footer>
+
+  <div data-sizeguide-modal style="position:fixed; inset:0; z-index:100; display:none; align-items:center; justify-content:center; padding:20px">
+    <div data-sizeguide-backdrop style="position:absolute; inset:0; background:rgba(22,22,22,.6)"></div>
+    <div style="position:relative; background:#FFFCF2; max-width:640px; width:100%; max-height:86vh; overflow:auto; padding:clamp(24px,4vw,44px)">
+      <button data-sizeguide-close aria-label="Cerrar" style="position:absolute; top:16px; right:16px; cursor:pointer; background:none; border:0; font-size:22px; line-height:1; color:#161616">×</button>
+      <h2 style="margin:0 0 clamp(18px,2.6vw,28px); font-size:clamp(26px,4vw,46px); letter-spacing:-.03em; line-height:1" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</h2>
+      <p style="margin:0 0 14px; font-size:13px; line-height:1.6; color:rgba(22,22,22,.7)" data-es="Creemos en la moda sin reglas y sin limitaciones. Por eso, nuestras piezas están diseñadas para adaptarse a todos los cuerpos y hacer que te sientas segura y cómoda." data-en="We believe in fashion without rules or limits. That's why our pieces are designed to fit every body and make you feel safe and comfortable.">Creemos en la moda sin reglas y sin limitaciones. Por eso, nuestras piezas están diseñadas para adaptarse a todos los cuerpos y hacer que te sientas segura y cómoda.</p>
+      <p style="margin:0 0 clamp(20px,3vw,30px); font-size:13px; line-height:1.6; color:rgba(22,22,22,.7)" data-es="Manejamos tallas desde XXS hasta XXL, y si buscas un ajuste aún más personalizado, podemos hacer tu traje de baño a la medida. Además, entendemos que cada cuerpo es único, por lo que puedes elegir distintas tallas para la parte de arriba y de abajo, asegurando un fit perfecto para ti." data-en="We carry sizes from XXS to XXL, and if you want an even more personalized fit, we can make your swimsuit to measure. Every body is unique, so you can mix sizes between top and bottom for a perfect fit.">Manejamos tallas desde XXS hasta XXL, y si buscas un ajuste aún más personalizado, podemos hacer tu traje de baño a la medida. Además, entendemos que cada cuerpo es único, por lo que puedes elegir distintas tallas para la parte de arriba y de abajo, asegurando un fit perfecto para ti.</p>
+      <div style="overflow-x:auto">
+        <table style="width:100%; border-collapse:collapse; font-size:11px; letter-spacing:.02em; min-width:520px">
+          <thead>
+            <tr>
+              <th style="text-align:left; padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD"></th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">XXS</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">XS</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">S</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">M</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">L</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">XL</th>
+              <th style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); background:#EFEBDD; text-transform:uppercase">XXL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-transform:uppercase; color:#935F51" data-es="Busto" data-en="Bust">Busto</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">77–81</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">81–85</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">85–89</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">89–94</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">95–98</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">98–101</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">101–106</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-transform:uppercase; color:#935F51" data-es="Cintura" data-en="Waist">Cintura</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">59–64</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">64–68</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">68–72</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">72–76</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">76–80</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">80–84</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">84–90</td>
+            </tr>
+            <tr>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-transform:uppercase; color:#935F51" data-es="Cadera" data-en="Hip">Cadera</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">84–88</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">88–92</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">93–97</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">98–102</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">103–108</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">109–114</td>
+              <td style="padding:9px 10px; border:1px solid rgba(22,22,22,.18); text-align:center">114–118</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="margin-top:14px; font-size:10px; letter-spacing:.12em; text-transform:uppercase; color:rgba(22,22,22,.55)" data-es="Medidas en centímetros" data-en="Measurements in centimeters">Medidas en centímetros</div>
+    </div>
+  </div>
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#35599F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#35599F&quot;,&quot;#935F51&quot;,&quot;#161616&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;animationPace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;natural&quot;,&quot;pausada&quot;],&quot;default&quot;:&quot;natural&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Animación&quot;}}">
@@ -240,10 +313,45 @@ class Component extends DCLogic {
     const p = this.props || {};
     this.accent = p.accentColor || '#35599F';
     import('./coela-motion.js').then(m => m.wire({ accent: this.accent, slow: p.animationPace === 'pausada' }));
+    this.wireCarousel();
     this.wireVista();
     this.wireSizes();
     this.wireCart();
     this.wireAccordions();
+    this.wireSizeGuide();
+  }
+
+  wireSizeGuide() {
+    const modal = document.querySelector('[data-sizeguide-modal]');
+    const open = document.querySelector('[data-sizeguide-open]');
+    const close = document.querySelector('[data-sizeguide-close]');
+    const backdrop = document.querySelector('[data-sizeguide-backdrop]');
+    if (!modal || !open) return;
+    const show = () => { modal.style.display = 'flex'; };
+    const hide = () => { modal.style.display = 'none'; };
+    open.addEventListener('click', show);
+    if (close) close.addEventListener('click', hide);
+    if (backdrop) backdrop.addEventListener('click', hide);
+  }
+
+  wireCarousel() {
+    const slides = document.querySelectorAll('[data-slide]');
+    const dots = document.querySelectorAll('[data-dot]');
+    const thumbs = document.querySelectorAll('[data-thumb]');
+    let idx = 0;
+    const go = n => {
+      idx = (n + slides.length) % slides.length;
+      slides.forEach((s, i) => { s.style.opacity = i === idx ? '1' : '0'; });
+      dots.forEach((d, i) => { d.style.background = i === idx ? '#161616' : 'rgba(22,22,22,.3)'; });
+      thumbs.forEach((t, i) => { t.style.borderColor = i === idx ? '#161616' : 'transparent'; });
+    };
+    const prev = document.querySelector('[data-carousel-prev]');
+    const next = document.querySelector('[data-carousel-next]');
+    if (prev) prev.addEventListener('click', () => go(idx - 1));
+    if (next) next.addEventListener('click', () => go(idx + 1));
+    dots.forEach((d, i) => d.addEventListener('click', () => go(i)));
+    thumbs.forEach((t, i) => t.addEventListener('click', () => go(i)));
+    this.goSlide = go;
   }
 
   wireVista() {
@@ -257,6 +365,7 @@ class Component extends DCLogic {
         if (a) a.style.opacity = isB ? '0' : '1';
         if (b) b.style.opacity = isB ? '1' : '0';
         if (label) label.textContent = isB ? 'Vista B' : 'Vista A';
+        if (this.goSlide) this.goSlide(0);
         btns.forEach(x => {
           const on = x === btn;
           x.style.background = on ? '#161616' : 'transparent';
