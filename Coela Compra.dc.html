@@ -14,6 +14,9 @@
   a { color:#161616; text-decoration:none; }
   a:hover { color:#35599F; }
   ::selection { background:#35599F; color:#FFFCF2; }
+  [data-grid-catalogo] { grid-template-columns:repeat(3,1fr); }
+  @media (max-width:900px) { [data-grid-catalogo] { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:520px) { [data-grid-catalogo] { grid-template-columns:1fr; } }
 </style>
 </helmet>
 
@@ -62,28 +65,45 @@
     </div>
   </section>
 
-  <div data-filterbar style="position:sticky; top:118px; --bar:1; z-index:30; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; padding:14px clamp(16px,3vw,44px); background:rgba(255,252,242,.92); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid rgba(22,22,22,.12); border-bottom:1px solid rgba(22,22,22,.12)">
-    <div style="display:flex; flex-wrap:wrap; gap:8px">
-      <button data-filter="todo" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid #161616; background:#161616; color:#FFFCF2; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Todo" data-en="All">Todo</button>
-      <button data-filter="bikinis" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">Bikinis</button>
-      <button data-filter="trajes" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Trajes completos" data-en="One-pieces">Trajes completos</button>
-      <button data-filter="sobreprendas" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Sobre prendas" data-en="Cover-ups">Sobre prendas</button>
-      <button data-filter="accesorios" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">Accesorios</button>
-    </div>
-    <div style="display:flex; align-items:center; gap:clamp(12px,2vw,24px); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(22,22,22,.62)">
-      <span><span data-count>12</span> <span data-es="piezas" data-en="pieces">piezas</span></span>
-      <div style="display:flex; align-items:center; gap:8px">
-        <button data-sort="nuevo" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; background:none; border:0; padding:0; color:#161616; border-bottom:1px solid #161616" data-es="Nuevo" data-en="New">Nuevo</button>
-        <span style="color:rgba(22,22,22,.3)">/</span>
-        <button data-sort="precio" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; background:none; border:0; padding:0; color:rgba(22,22,22,.62); border-bottom:1px solid transparent" data-es="Precio" data-en="Price">Precio</button>
+  <div data-filterbar style="position:sticky; top:118px; --bar:1; z-index:30; display:flex; flex-direction:column; gap:12px; padding:14px clamp(16px,3vw,44px); background:rgba(255,252,242,.92); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid rgba(22,22,22,.12); border-bottom:1px solid rgba(22,22,22,.12)">
+    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px">
+      <div style="display:flex; flex-wrap:wrap; gap:8px">
+        <span style="align-self:center; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:rgba(22,22,22,.5); margin-right:2px" data-es="Categoría" data-en="Category">Categoría</span>
+        <button data-filter="todo" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid #161616; background:#161616; color:#FFFCF2; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Todo" data-en="All">Todo</button>
+        <button data-filter="bikinis" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">Bikinis</button>
+        <button data-filter="trajes" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Trajes completos" data-en="One-pieces">Trajes completos</button>
+        <button data-filter="sobreprendas" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Sobre prendas" data-en="Cover-ups">Sobre prendas</button>
+        <button data-filter="accesorios" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; padding:8px 14px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">Accesorios</button>
       </div>
-      <a data-navlink href="Coela%20Home.dc.html" style="position:relative; padding-bottom:2px; color:#161616" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</a>
+      <a data-navlink href="Coela%20Home.dc.html" style="position:relative; padding-bottom:2px; color:#161616; font-size:10px; letter-spacing:.16em; text-transform:uppercase" data-es="Guía de tallas" data-en="Size guide">Guía de tallas</a>
+    </div>
+    <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; border-top:1px solid rgba(22,22,22,.1); padding-top:12px">
+      <div style="display:flex; flex-wrap:wrap; gap:8px">
+        <span style="align-self:center; font-size:9px; letter-spacing:.18em; text-transform:uppercase; color:rgba(22,22,22,.5); margin-right:2px" data-es="Talla" data-en="Size">Talla</span>
+        <button data-sizefilter="todas" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid #161616; background:#161616; color:#FFFCF2; transition:background .4s ease, color .4s ease, border-color .4s ease" data-es="Todas" data-en="All">Todas</button>
+        <button data-sizefilter="XS" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">XS</button>
+        <button data-sizefilter="S" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">S</button>
+        <button data-sizefilter="M" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">M</button>
+        <button data-sizefilter="L" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">L</button>
+        <button data-sizefilter="XL" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.1em; padding:7px 12px; border:1px solid rgba(22,22,22,.25); background:transparent; color:#161616; transition:background .4s ease, color .4s ease, border-color .4s ease">XL</button>
+      </div>
+      <div style="display:flex; align-items:center; gap:clamp(12px,2vw,24px); font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:rgba(22,22,22,.62)">
+        <span><span data-count>12</span> <span data-es="piezas" data-en="pieces">piezas</span></span>
+        <div style="display:flex; align-items:center; gap:8px">
+          <span data-es="Ordenar por" data-en="Sort by">Ordenar por</span>
+          <button data-sort="nuevo" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; background:none; border:0; padding:0; color:#161616; border-bottom:1px solid #161616" data-es="Nuevo" data-en="New">Nuevo</button>
+          <span style="color:rgba(22,22,22,.3)">/</span>
+          <button data-sort="precio" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; background:none; border:0; padding:0; color:rgba(22,22,22,.62); border-bottom:1px solid transparent" data-es="Precio" data-en="Price">Precio</button>
+          <span style="color:rgba(22,22,22,.3)">/</span>
+          <button data-sort="alfa" style="cursor:pointer; font:inherit; font-weight:700; font-size:10px; letter-spacing:.16em; text-transform:uppercase; background:none; border:0; padding:0; color:rgba(22,22,22,.62); border-bottom:1px solid transparent" data-es="A–Z" data-en="A–Z">A–Z</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <section style="padding:clamp(20px,3vw,44px) clamp(16px,3vw,44px) clamp(40px,6vw,96px)">
-    <div style="display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:clamp(10px,1.4vw,22px)">
-      <sc-for list="{{ items }}" as="p" hint-placeholder-count="8">
+    <div data-grid-catalogo style="display:grid; gap:clamp(10px,1.4vw,22px)">
+      <sc-for list="{{ items }}" as="p" hint-placeholder-count="6">
         <a data-tile href="Coela%20Producto.dc.html" style="display:block">
           <div data-reveal="mask" style="position:relative; overflow:hidden; clip-path:inset(0 0 100% 0); transition:clip-path 1.2s cubic-bezier(.76,0,.24,1); aspect-ratio:3/4.1; background:#C6C5B9">
             <sc-if value="{{ p.a }}" hint-placeholder-val="{{ false }}">
@@ -137,27 +157,31 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;accentColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#35599F&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#35599F&quot;,&quot;#935F51&quot;,&quot;#161616&quot;],&quot;section&quot;:&quot;Marca&quot;},&quot;animationPace&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;natural&quot;,&quot;pausada&quot;],&quot;default&quot;:&quot;natural&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Animación&quot;}}">
 const CATALOGO = [
-  { id: 1, nombre: 'Bikini Mareas', precio: '$1,490', n: 1490, cat: 'Bikinis', key: 'bikinis', a: 'assets/sets.png', b: 'assets/flor-vertical.png' },
-  { id: 2, nombre: 'Bikini Sal', precio: '$1,490', n: 1490, cat: 'Bikinis', key: 'bikinis', a: 'assets/tops.png', b: 'assets/tela.png' },
-  { id: 3, nombre: 'Traje Piedra', precio: '$1,890', n: 1890, cat: 'Trajes completos', key: 'trajes', a: 'assets/bottoms.png', b: 'assets/rocas.png' },
-  { id: 4, nombre: 'Traje Neblina', precio: '$1,890', n: 1890, cat: 'Trajes completos', key: 'trajes', a: 'assets/accesorios.png', b: 'assets/flor.png' },
-  { id: 5, nombre: 'Bikini Copal', precio: '$1,590', n: 1590, cat: 'Bikinis', key: 'bikinis', a: 'assets/flor-vertical.png', b: 'assets/sets.png' },
-  { id: 6, nombre: 'Sobreprenda Bruma', precio: '$2,190', n: 2190, cat: 'Sobre prendas', key: 'sobreprendas', a: 'assets/tela.png', b: 'assets/tops.png' },
-  { id: 7, nombre: 'Sobreprenda Laguna', precio: '$2,390', n: 2390, cat: 'Sobre prendas', key: 'sobreprendas', a: 'assets/rocas.png', b: 'assets/bottoms.png' },
-  { id: 8, nombre: 'Traje Ola', precio: '$1,790', n: 1790, cat: 'Trajes completos', key: 'trajes', a: 'assets/sets.png', b: 'assets/accesorios.png' },
-  { id: 9, nombre: 'Pareo Marea', precio: '$890', n: 890, cat: 'Accesorios', key: 'accesorios', a: 'assets/flor.png', b: 'assets/tela.png' },
-  { id: 10, nombre: 'Bolsa Tejida', precio: '$1,190', n: 1190, cat: 'Accesorios', key: 'accesorios', a: 'assets/accesorios.png', b: 'assets/bottoms.png' },
-  { id: 11, nombre: 'Bikini Flor', precio: '$1,590', n: 1590, cat: 'Bikinis', key: 'bikinis', a: 'assets/tops.png', b: 'assets/flor.png' },
-  { id: 12, nombre: 'Traje Basalto', precio: '$1,990', n: 1990, cat: 'Trajes completos', key: 'trajes', a: 'assets/rocas.png', b: 'assets/sets.png' }
+  { id: 1, nombre: 'Bikini Mareas', precio: '$1,490', n: 1490, cat: 'Bikinis', key: 'bikinis', tallas: ['XS','S','M','L'], a: 'assets/sets.png', b: 'assets/flor-vertical.png' },
+  { id: 2, nombre: 'Bikini Sal', precio: '$1,490', n: 1490, cat: 'Bikinis', key: 'bikinis', tallas: ['XS','S','M','L','XL'], a: 'assets/tops.png', b: 'assets/tela.png' },
+  { id: 3, nombre: 'Traje Piedra', precio: '$1,890', n: 1890, cat: 'Trajes completos', key: 'trajes', tallas: ['S','M','L','XL'], a: 'assets/bottoms.png', b: 'assets/rocas.png' },
+  { id: 4, nombre: 'Traje Neblina', precio: '$1,890', n: 1890, cat: 'Trajes completos', key: 'trajes', tallas: ['XS','S','M','L'], a: 'assets/accesorios.png', b: 'assets/flor.png' },
+  { id: 5, nombre: 'Bikini Copal', precio: '$1,590', n: 1590, cat: 'Bikinis', key: 'bikinis', tallas: ['XS','S','M'], a: 'assets/flor-vertical.png', b: 'assets/sets.png' },
+  { id: 6, nombre: 'Sobreprenda Bruma', precio: '$2,190', n: 2190, cat: 'Sobre prendas', key: 'sobreprendas', tallas: ['S','M','L','XL'], a: 'assets/tela.png', b: 'assets/tops.png' },
+  { id: 7, nombre: 'Sobreprenda Laguna', precio: '$2,390', n: 2390, cat: 'Sobre prendas', key: 'sobreprendas', tallas: ['M','L','XL'], a: 'assets/rocas.png', b: 'assets/bottoms.png' },
+  { id: 8, nombre: 'Traje Ola', precio: '$1,790', n: 1790, cat: 'Trajes completos', key: 'trajes', tallas: ['XS','S','M','L','XL'], a: 'assets/sets.png', b: 'assets/accesorios.png' },
+  { id: 9, nombre: 'Pareo Marea', precio: '$890', n: 890, cat: 'Accesorios', key: 'accesorios', tallas: ['S','M','L'], a: 'assets/flor.png', b: 'assets/tela.png' },
+  { id: 10, nombre: 'Bolsa Tejida', precio: '$1,190', n: 1190, cat: 'Accesorios', key: 'accesorios', tallas: ['XS','S','M','L','XL'], a: 'assets/accesorios.png', b: 'assets/bottoms.png' },
+  { id: 11, nombre: 'Bikini Flor', precio: '$1,590', n: 1590, cat: 'Bikinis', key: 'bikinis', tallas: ['XS','S','M','L'], a: 'assets/tops.png', b: 'assets/flor.png' },
+  { id: 12, nombre: 'Traje Basalto', precio: '$1,990', n: 1990, cat: 'Trajes completos', key: 'trajes', tallas: ['S','M','L','XL'], a: 'assets/rocas.png', b: 'assets/sets.png' }
 ];
 
 class Component extends DCLogic {
-  state = { filter: 'todo', sort: 'nuevo' };
+  state = { filter: 'todo', size: 'todas', sort: 'nuevo' };
 
   renderVals() {
-    let items = CATALOGO.filter(p => this.state.filter === 'todo' || p.key === this.state.filter);
+    let items = CATALOGO.filter(p =>
+      (this.state.filter === 'todo' || p.key === this.state.filter) &&
+      (this.state.size === 'todas' || p.tallas.includes(this.state.size))
+    );
     if (this.state.sort === 'precio') items = items.slice().sort((a, b) => a.n - b.n);
-    return { items };
+    if (this.state.sort === 'alfa') items = items.slice().sort((a, b) => a.nombre.localeCompare(b.nombre));
+    return { items: items.slice(0, 6) };
   }
 
   componentDidMount() {
@@ -172,6 +196,9 @@ class Component extends DCLogic {
     document.querySelectorAll('[data-filter]').forEach(b => {
       b.addEventListener('click', () => this.setState({ filter: b.dataset.filter }));
     });
+    document.querySelectorAll('[data-sizefilter]').forEach(b => {
+      b.addEventListener('click', () => this.setState({ size: b.dataset.sizefilter }));
+    });
     document.querySelectorAll('[data-sort]').forEach(b => {
       b.addEventListener('click', () => this.setState({ sort: b.dataset.sort }));
     });
@@ -185,11 +212,20 @@ class Component extends DCLogic {
   }
 
   paintControls() {
-    const n = CATALOGO.filter(p => this.state.filter === 'todo' || p.key === this.state.filter).length;
+    const n = CATALOGO.filter(p =>
+      (this.state.filter === 'todo' || p.key === this.state.filter) &&
+      (this.state.size === 'todas' || p.tallas.includes(this.state.size))
+    ).length;
     const c = document.querySelector('[data-count]');
     if (c) c.textContent = String(n).padStart(2, '0');
     document.querySelectorAll('[data-filter]').forEach(b => {
       const on = b.dataset.filter === this.state.filter;
+      b.style.background = on ? '#161616' : 'transparent';
+      b.style.color = on ? '#FFFCF2' : '#161616';
+      b.style.borderColor = on ? '#161616' : 'rgba(22,22,22,.25)';
+    });
+    document.querySelectorAll('[data-sizefilter]').forEach(b => {
+      const on = b.dataset.sizefilter === this.state.size;
       b.style.background = on ? '#161616' : 'transparent';
       b.style.color = on ? '#FFFCF2' : '#161616';
       b.style.borderColor = on ? '#161616' : 'rgba(22,22,22,.25)';
